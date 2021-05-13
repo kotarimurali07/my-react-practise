@@ -17,15 +17,7 @@ function Alert(props) {
 }
 export default function FullWidthGrid(props) {
   const classes = useStyles();
-  const {
-    email,
-    password,
-    handleEmail,
-    handlePassword,
-    handleSubmit,
-    open,
-    setOpen,
-  } = props;
+  const { email, password, handleEmail, handlePassword, open, setOpen } = props;
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -42,7 +34,7 @@ export default function FullWidthGrid(props) {
             <img src={Tiger} style={{ width: "700px", height: "300px" }} />
           </CardMedia>
           <Paper className={classes.paper}>
-            <h1>LOGIN</h1>
+            <h1>SIGN UP</h1>
 
             <div className="email">
               <CustomField
@@ -67,23 +59,32 @@ export default function FullWidthGrid(props) {
                 fullWidth
               />
             </div>
+
+            <div className="password">
+              <CustomField
+                type="password"
+                name="password"
+                label="confirm password"
+                required
+                value={password}
+                handleChange={handlePassword}
+                variant="outlined"
+                fullWidth
+              />
+            </div>
             <div className="button">
               <Button
                 variant="contained"
                 color="primary"
                 className="button"
                 fullWidth
-                onClick={handleSubmit}
               >
-                login
+                signUp
               </Button>
             </div>
-            <div className="forgotPassword">
-              <Link href="#">forgotPassword</Link>
-            </div>
             <div className="signUp">
-              create new account?
-              <Link href="#">sign Up</Link>
+              already have an account?
+              <Link href="#">Login</Link>
             </div>
           </Paper>
         </div>

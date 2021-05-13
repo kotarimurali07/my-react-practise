@@ -1,6 +1,5 @@
 * {
   margin: 0px;
-  /* background-color: red; */
 }
 .heloo {
   background-repeat: no-repeat;
@@ -13,7 +12,21 @@
   background-position: center;
   margin-top: 50px;
 }
-/* .email {
-  margin-top: 5px;
-  margin-bottom: 19px;
-} */
+.email {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+.password {
+  margin-bottom: 15px;
+}
+.button {
+  margin-bottom: 15px;
+}
+.forgotPassword {
+  text-align: left;
+}
+.signUp {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}

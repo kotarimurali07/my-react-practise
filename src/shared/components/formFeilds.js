@@ -15,7 +15,10 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 // import DateFnsUtils from "@date-io/date-fns";
+import { InputAdornment, IconButton } from "@material-ui/core";
 import validate from "./valadation";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 // import { uploadToStorage } from "../fileUploader";
 // import { errorMsg } from "../SnackBars/index";
 // import CountryField from "./Geo/CountryField";
@@ -233,6 +236,46 @@ const CheckBoxInput = ({
     />
   );
 };
+export const PasswordInput = ({
+  label,
+  name,
+  handleChange,
+  className,
+  required,
+  value = "",
+  variant = "outlined",
+}) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  return (
+    <ValidatorForm autoComplete="off">
+      <TextValidator
+        password
+        label={label}
+        name={name}
+        className={className}
+        type={showPassword ? "text" : "password"}
+        onChange={handleChange}
+        variant={variant}
+        size="small"
+        required={required}
+        value={value}
+        fullWidth
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton onClick={handleClickShowPassword}>
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
+      />
+    </ValidatorForm>
+  );
+};
 // const AutoCompleteInput = ({
 //   label,
 //   name,
@@ -371,6 +414,8 @@ export function CustomField(details) {
 
     case "email":
       return <EmailInput {...details} />;
+    case "password":
+      return <PasswordInput {...details} />;
 
     case "number":
       return <NumberInput {...details} />;
