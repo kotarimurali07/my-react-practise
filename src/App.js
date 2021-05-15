@@ -7,6 +7,21 @@
 //     </div>
 //   );
 // };
+// import React from "react";
+// import LoginPage from "./services/demoauth/components/LoginPage";
+// import store from "./services/demoauth/store/store";
+// import { Provider } from "react-redux";
+// const App = () => {
+//   return (
+//     <Provider store={store}>
+//       <div>
+//         <LoginPage />
+//       </div>
+//     </Provider>
+//   );
+// };
+
+// export default App;
 
 import React from "react";
 import store from "./services/authentication/store/store";
